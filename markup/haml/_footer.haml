@@ -1,0 +1,88 @@
+%footer.footer
+  .container
+    .row
+      .col-xs-12.col-md-4.desktop-logo
+        %a.logo(href="#")
+          %span Все права защищены (с)
+      .col-xs-12.col-md-8
+        .navigation-wrap
+          %ul.navigation
+            %li
+              %a(href="#") Политика конфиденциальности
+            %li
+              %a(href="#") Правила пользования
+            %li
+              %a(href="https://fruitware.ru/") Разработано Fruitware.ru
+      .col-xs-12.col-md-4.mobile-logo
+        %a.logo(href="#")
+          %span Все права защищены (с)
+
+
+.popup-overlay(data-popup="login")
+  .popup.popup-sm
+    %span.icon.icon-close
+    -#  authorization
+    .popup-wrapper
+      .popup-header
+        %h5 Вход в систему
+      .popup-body
+        %form
+          .form-group
+            %input.form-control(type="tel" placeholder="Телефон")
+          .form-group
+            %input.form-control(type="password" placeholder="Пароль")
+          .checkbox-container
+            %input#remember-me(type="checkbox" data-tooltip="result")
+            %label(for="remember-me") Запомни меня
+            %a.forgot-password(href="#" data-popup-link="registration") Забыли пароль?
+          .form-group
+            .btn-wrapper
+              %button.btn-main Войти
+
+
+
+.popup-overlay(data-popup="registration")
+  .popup.popup-sm
+    %span.icon.icon-close
+    -#  registration
+    .popup-wrapper
+      .popup-header
+        %h5 Восстановление пароля
+      .popup-body
+        %p Для восстановления пароля, пожалуйста, введите адрес электронной почты, прикреплённой к профилю системы  “Консьерж”
+        %form
+          .form-group
+            %input.form-control(type="tel" placeholder="Телефон")
+
+          .form-group
+            .btn-wrapper
+              %button.btn-main Востановить пароль
+
+.popup-overlay(data-popup="map")
+  .popup.popup-md.popup-map
+    %span.icon.icon-close
+    -#  registration
+    .popup-wrapper
+      .popup-body
+        #map
+
+
+
+
+
+
+%script(src="js/libs/jquery-1.11.2.min.js")
+%script(src="js/libs/chosen.jquery.min.js")
+%script(src="js/libs/owl.carousel.min.js")
+%script(src="js/libs/imagesloaded.min.js")
+%script(src="js/libs/matchHeight.js")
+%script(src="js/libs/Scroll2id.min.js")
+%script(src="js/libs/jquery-imagefill.js")
+%script(src="//maps.googleapis.com/maps/api/js")
+%script(src="js/libs/google-map.js")
+%script(src="js/scripts.min.js")
+
+
+
+
+

@@ -1,0 +1,105 @@
+%header.header
+  .mobile-header
+
+    %a.logo(href="#")
+
+    .navbar-menu-overlay
+    %a.mob-menu-icon(href="#")
+      %span
+    .mob-sidebar
+      .mob-menu-container
+        %ul.menu.menu-mob
+          %li
+            %a.menu-mob-item(href="#" data-popup-link="login") Войти
+          %li
+            %a.menu-mob-item(href="#info") Преимущества
+          %li
+            %a.menu-mob-item(href="#rates") Цены
+          %li
+            %a.menu-mob-item(href="#reviews") Отзывы
+          %li
+            %a.menu-mob-item(href="#contacts") Контакты
+
+  .header-slider
+    .container
+      .row
+        .header-top
+          .desktop-header
+            .col-xs-3
+              %a.logo(href="#")
+            .col-xs-6
+              .navigation-wrap
+                %ul.navigation
+                  %li
+                    %a(href="#info") Преимущества
+                  %li
+                    %a(href="#rates") Цены
+                  %li
+                    %a(href="#reviews") Отзывы
+                  %li
+                    %a(href="#contacts") Контакты
+
+            .col-xs-3
+              .login-wrap
+                %a.login(href="#" data-popup-link="login")Войти
+              .language-switcher.clearfix
+                %select.chosen-select-no-single
+                  %option РУ
+                  %option Md
+                  %option En
+
+          .row
+            .col-md-4.col-md-offset-7
+              .slider-form
+                %h4 Получите месяц тестового периода <span>бесплатно</span>!
+                %form
+                  .form-group
+                    %input.form-control(type="email" placeholder="Email")
+                  .form-group
+                    %input.form-control(type="text" placeholder="Торговый центр “Ривьера”")
+                  .form-group
+                    %select
+                      %option Тип обьекта
+                      %option Стандарт
+                      %option Премиум
+                      %option Базовый
+                  .form-group
+                    %input.form-control(type="text" placeholder="Ваш телефон (необязательно)")
+                  .form-group
+                    %button Получить Доступ
+
+    .owl-carousel
+      .item
+        .container
+          .row
+            .slider-content
+              .col-md-6.col-sm-10
+                .slider-description
+                  %h3 Мы делаем жизнь проще!
+                  %p Забудьте о проблемах и недовольстве клиентов. Моментальный отклик на заявки и оперативный менеджмент объекта в один клик
+        %img(src="images/slider-item.png" alt="")
+      .item
+        .container
+          .row
+            .slider-content
+              .col-md-6.col-sm-10
+                .slider-description
+                  %h3 Мы делаем жизнь проще!
+                  %p Забудьте о проблемах и недовольстве клиентов. Моментальный отклик на заявки и оперативный менеджмент объекта в один клик
+        %img(src="images/slider-item.png" alt="")
+      .item
+        .container
+          .row
+            .slider-content
+              .col-md-6.col-sm-10
+                .slider-description
+                  %h3 Мы делаем жизнь проще!
+                  %p Забудьте о проблемах и недовольстве клиентов. Моментальный отклик на заявки и оперативный менеджмент объекта в один клик
+        %img(src="images/slider-item.png" alt="")
+
+
+
+
+
+
+
