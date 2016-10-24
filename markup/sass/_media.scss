@@ -1,0 +1,12 @@
+@include breakpoint($tabletlgdown) {
+  .left-block {
+    display: none;
+  }
+
+  .padding-right-none {
+    padding: 0;
+  }
+
+
+}
+
