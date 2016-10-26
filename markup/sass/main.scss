@@ -12,6 +12,7 @@
 body {
   font-family: $raleway;
   color: $gray;
+  background: #f5f6f8;
   /* Behavior for different browser important. */
   font-smoothing: antialiased;
   -webkit-font-smoothing: antialiased;
@@ -127,6 +128,9 @@ a {
 
 .padding-none {
   padding: 0;
+}
+.mt {
+  margin-top: 20px;
 }
 /* Additional styles */
 b {
@@ -273,7 +277,7 @@ section {
   .header {
     .owl-theme .owl-dots {
       position: absolute;
-      top: 260px;
+      top: 295px;
       z-index: 7;
     }
   }
@@ -311,6 +315,7 @@ section {
       text-align: center;
       a {
         color: $white;
+        margin-bottom: 15px;
         padding: 10px 10px 10px 15px;
         font-size: 14px;
         text-decoration: none;
@@ -331,18 +336,19 @@ section {
 .mob-sidebar {
   text-align: left;
   display: inline-block;
-  background: rgba(36, 46, 79, 0.6);
+  background: rgba(36, 46, 79, 0.9);
   position: fixed;
   right: 0;
   top: 0;
-  width: 260px;
+  width: 100%;
   box-shadow: -2px 0 5px 0 rgba(0,0,0,0.2);
   height: 100%;
   z-index: 10;
-  margin-right: -270px;
+  margin-right: -100%;
 
   .mob-menu-container {
     height: 100%;
+    padding-top: 20%;
     transition: margin-left 0.2s;
     position: relative;
     overflow-y: auto;
@@ -359,13 +365,12 @@ section {
   display: none;
   width: 28px;
   height: 30px;
-  padding-top: 10px;
+  padding-top: 9px;
   position: absolute;
   top: 22px;
   right: 20px;
   z-index: 100;
   transition: margin-left 0.2s;
-
   span {
     position: relative;
     display: block;
@@ -399,7 +404,6 @@ section {
 
   &.mob-menu-icon-opened {
     position: fixed;
-    margin-right: 250px;
     top: 20px;
   }
 }
@@ -526,17 +530,17 @@ section {
 
   .owl-controls {
     .owl-nav {
-      position: absolute;
       width: 100%;
-      top: 50%;
       .owl-prev {
         position: absolute;
         left: 30px;
+        top: 50%;
         z-index: 10;
         padding: 3px 16px 3px 13px;
       }
       .owl-next {
         position: absolute;
+        top: 50%;
         right: 30px;
         z-index: 10;
         padding: 3px 13px 3px 16px;
@@ -582,7 +586,7 @@ section {
     &:after {
       content: '';
       position: absolute;
-      bottom: 10px;
+      bottom: 9px;
       width: 50%;
       z-index: 3;
       border-bottom: 80px solid #f5f6f8;
@@ -613,14 +617,42 @@ section {
     }
     .slider-description {
       text-align: center;
-      h3 {
-        font-size: 40px;
-      }
     }
   }
 
 }
 
+@include  breakpoint ($mobilexs) {
+  .header-slider {
+    .slider-content {
+      .slider-description {
+        text-align: center;
+        h3 {
+          font-size: 30px;
+          line-height: 30px;
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+
+}
+@include  breakpoint ($mobilesmall) {
+  .header-slider {
+    .slider-content {
+      .slider-description {
+        text-align: center;
+        h3 {
+          font-size: 25px;
+        }
+
+      }
+    }
+  }
+
+}
 
 
 
@@ -656,6 +688,7 @@ section {
       text-transform: uppercase;
       border-radius: 30px;
       cursor: pointer;
+      outline: none;
       &:hover {
         border-bottom: 3px solid #a37835;
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -665,12 +698,9 @@ section {
 }
 @include breakpoint ($tabletlgdown) {
   .slider-form {
-    margin: 170px auto 0 auto;
+    margin: 210px auto 0 auto;
     max-width: 300px;
   }
-}
-@include breakpoint ($mobilexs) {
-
 }
 
 
@@ -682,6 +712,8 @@ section {
   }
   .chosen-container-single {
     .chosen-single {
+      background: none;
+      background-color: #fff;
       padding: 9px 0 0 8px;
       height: 45px;
       color: #aaa;
@@ -763,21 +795,22 @@ section {
     &:hover {
       background-color: rgba(195,158,101, 0.5);
       span {
-        display: inline-block;
+        opacity: 1;
       }
     }
     span {
-      transition: all 1s;
+      transition: all 2s;
       border: 1px solid #fff;
       text-transform: uppercase;
       border-radius: 20px;
       position: absolute;
       top: 50%;
       left: 50%;
-      display: none;
+      display: inline-block;
       margin-top: -20px;
       padding: 5px 30px;
       transform: translateX(-50%);
+      opacity: 0;
 
 
     }
@@ -792,10 +825,14 @@ section {
 
 }
 
+.btn-hide {
+  display: block;
+}
 
 .dn {
   display: none;
 }
+
 .left-block {
   background: url("../images/panel-img-open.png") no-repeat;
   background-size: cover;
@@ -878,6 +915,7 @@ section {
     border-bottom: 3px solid $maincolor;
     border-radius: 20px;
     transition: all 0.3s;
+    outline: none;
     &:hover {
       border-bottom: 3px solid #a37835;
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
@@ -893,6 +931,9 @@ section {
     border: 1px solid $maincolor;
     border-radius: 20px;
     transition: all 1s;
+
+
+
     &:before {
       color: $maincolor;
       font-size: 40px;
@@ -934,8 +975,8 @@ section {
   &:after {
     content: '';
     position: absolute;
-    bottom: -80px;
-    width: 50%;
+    bottom: -78px;
+    width: 49%;
     z-index: 3;
     border-bottom: 80px solid transparent;
     -moz-transform: rotate(0.000001deg);
@@ -945,14 +986,14 @@ section {
     transform: rotate(0.000001deg);
   }
   &:after {
-    right: 50%;
+    right: 49%;
     border-left: 1000px solid transparent;
-    border-right: 1000px solid #fff;
+    border-right: 1000px solid #f5f6f8;
   }
   &:before {
     left: 50%;
     border-right: 1000px solid transparent;
-    border-left: 1000px solid #fff;
+    border-left: 1000px solid #f5f6f8;
   }
   .owl-theme {
     .owl-controls {
@@ -960,12 +1001,12 @@ section {
         top: 10%;
         .owl-prev {
           color: $light-gray;
-          left: 50px;
+          left: 0;
           border: 1px solid $light-gray;
         }
         .owl-next {
           color: $light-gray;
-          right: 50px;
+          right: 0;
           border: 1px solid $light-gray;
         }
       }
@@ -1002,6 +1043,7 @@ section {
       font-size: 16px;
       color: $light-gray;
       line-height: 24px;
+      padding: 0 30px;
     }
   }
 }
@@ -1025,12 +1067,12 @@ section {
 /* earnings  */
 
 .advantages-open {
-  margin-top: 100px;
   display: none;
-
+  position: relative;
+  z-index: 4;
   h3 {
     text-align: center;
-    margin: 40px 0;
+    margin-bottom: 40px;
     font-weight: 400;
   }
   p {
@@ -1053,8 +1095,6 @@ section {
     }
   }
 }
-
-
 
 
 .profile-slider {
@@ -1082,7 +1122,7 @@ section {
   .owl-controls {
     .owl-nav {
       .owl-prev {
-        left: -70px;
+        left: -85px;
       }
       .owl-next {
         right: -70px;
@@ -1109,6 +1149,13 @@ section {
       transform: none;
       top: 69px;
       left: 0;
+    }
+    .owl-controls {
+      .owl-nav {
+        .owl-prev {
+          left: -70px;
+        }
+      }
     }
 
   }
@@ -1325,12 +1372,12 @@ section {
         .owl-nav {
           .owl-prev {
             color: $mainbg;
-            left: 40px;
+            left: 15px;
             border: 1px solid $mainbg;
           }
           .owl-next {
             color: $mainbg;
-            right: 40px;
+            right: 15px;
             border: 1px solid $mainbg;
           }
         }
@@ -1368,6 +1415,7 @@ section {
     margin-bottom: 50px;
   }
   .clients-list {
+    text-align: center;
     li {
       list-style-type: none;
       display: inline-block;
@@ -1380,7 +1428,7 @@ section {
 @include breakpoint ($tabletlgdown) {
   .clients {
     .headline {
-      margin-bottom: 50px;
+      margin-bottom: 20px;
     }
     .clients-list {
       li {
@@ -1400,7 +1448,7 @@ section {
 /* Main form */
 .main-form {
   background: $mainbg;
-  padding: 80px 40px;
+  padding: 80px 0;
   .headline {
     h3 {
       font-size: 36px;
@@ -1419,12 +1467,19 @@ section {
     border-right: none;
     border-bottom: 3px solid $maincolor;
     border-left: none;
+    outline: none;
     &:hover {
       border-bottom: 3px solid #7a5c2e;
       box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     }
   }
 
+}
+
+@include breakpoint ($tabletlgdown) {
+  .form {
+    padding: 0 40px;
+  }
 }
 /* Main form */
 
@@ -1446,6 +1501,7 @@ section {
     position: relative;
     padding-left: 20px;
   }
+
   .cotacts-wrapper {
     margin-top: 100px;
     display: inline-block;
@@ -1462,6 +1518,13 @@ section {
     }
   }
   .phone {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
     &:before {
       content: "\f095";
       font: $fontawesome;
@@ -1472,6 +1535,13 @@ section {
     }
   }
   .email {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 20px;
+    &:hover {
+      text-decoration: underline;
+    }
     &:before {
       content: "\f0e0";
       font: $fontawesome;
@@ -1488,7 +1558,7 @@ section {
      content: "\f239";
      font: $fontawesome;
      position: absolute;
-     left: -10px;
+     left: -6px;
      color: $mainbg;
    }
   }
@@ -1527,7 +1597,7 @@ section {
         &:hover {
           background: #2c345e;
         }
-        
+
       }
       .social-fb {
         &:before {
@@ -1661,6 +1731,7 @@ section {
 .dn {
   display: none;
 }
+
 
 .icon-close {
   display: block;
@@ -1827,19 +1898,23 @@ input {
 
     }
   }
+  .owl-carousel .owl-item {
+    padding: 10px 0;
+  }
   .owl-theme {
     .owl-controls {
       .owl-nav {
-        top: 25%;
         .owl-prev, .owl-next {
           border: 1px solid $gray;
           color: $gray;
         }
         .owl-prev {
           left: -50px;
+          top: 25%;
         }
         .owl-next {
           right: -50px;
+          top: 25%;
         }
       }
     }
@@ -1904,6 +1979,9 @@ input {
     .mobile-logo {
       display: inline-block;
       margin-top: 20px;
+      .logo {
+        left: -5px;
+      }
     }
     .navigation {
       text-align: center;
@@ -1919,4 +1997,17 @@ input {
 
 #map {
   height: 400px;
+}
+
+.padding-l {
+  display: none !important;
+}
+.reviews-card {
+  display: none;
+  &.active {
+    display: block;
+  }
+}
+.active-user {
+  margin-top: -15px;
 }

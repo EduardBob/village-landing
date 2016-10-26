@@ -86,7 +86,6 @@
           .row
 
             .earnings-slider
-
               .item
                 .col-md-4
                   .item-wrap
@@ -141,7 +140,7 @@
             .col-md-12
               .btn-wrapper
                 %a.btn-white.btn-advantages-open(href="#" ) Узнать больше
-              .advantages-open
+              .advantages-open.animated.fadeInDown
                 %h3 Ваши клиенты всегда будут довольны
                 %p А между тем так же, как первое условие доброй жизни есть воздержание, так и первое условие воздержанной жизни есть пост. Нельзя не радоваться этому так же, как не могли бы не радоваться люди, стремившиеся войти на верх дома и прежде беспорядочно и тщетно лезшие с разных сторон прямо на стены, когда бы они стали сходиться, наконец, к первой ступени лестницы и все бы теснились у нее, зная, что хода на верх не может быть помимо этой первой ступени лестницы.
                 %p А между тем так же, как первое условие доброй жизни есть воздержание, так и первое условие воздержанной жизни есть пост. Нельзя не радоваться этому так же, как не могли бы не радоваться люди, стремившиеся войти на верх дома и прежде беспорядочно и тщетно лезшие с разных сторон прямо на стены, когда бы они стали сходиться, наконец, к первой ступени лестницы и все бы теснились у нее, зная, что хода на верх не может быть помимо этой первой ступени лестницы.
@@ -164,7 +163,7 @@
                 .row
                   .col-md-12
                     .btn-wrapper
-                      %a.btn-white.btn-advantages-close(href="#" ) Узнать больше
+                      %a.btn-white.btn-advantages-close(href="#" ) Свернуть
       %section.profile-slider
         .container
           .row
@@ -201,7 +200,7 @@
                     %h4 Делайте пометки
                     %p An artist should always have control over their creative process.
               .profile-info-footer
-                %a(href="#") ПОПРОБУЙТЕ СЕЙЧАС
+                %a(href="#home") ПОПРОБУЙТЕ СЕЙЧАС
       %section.join-now
         .container
           .row
@@ -209,7 +208,7 @@
               %h2 Присоединяйтесь
               %p Уже на данный момент нашими услугами пользуется около 50 000 пользователей. Станьте частью нашего большого сообщества.
               .btn-wrapper
-                %a.btn-main(href="#" ) ПОЛУЧИТЬ ДОСТУП
+                %a.btn-main(href="#home" ) ПОЛУЧИТЬ ДОСТУП
       %section.rates#rates
         .container
           .row
@@ -277,26 +276,43 @@
           .row
             .col-md-12
               .reviews-card-wrap
+                .reviews-card.active
+                  %p.reviews-description Консьерж помог нашему бизнес-центру качественно улучшить уровень предоставляемых услуг!
+                  %h5.reviews-name Геннадий Волыгин1
+                  %p.reviews-position управляющий БЦ “Сити-Люкс”
+                  .reviews-img
+                    %img(src="images/reviews-img.png" )
                 .reviews-card
                   %p.reviews-description Консьерж помог нашему бизнес-центру качественно улучшить уровень предоставляемых услуг!
-                  %h5.reviews-name Геннадий Волыгин
+                  %h5.reviews-name Вася Пупкин
+                  %p.reviews-position управляющий БЦ “Сити-Люкс”
+                  .reviews-img
+                    %img(src="images/reviews-img.png" )
+                .reviews-card
+                  %p.reviews-description Консьерж помог нашему бизнес-центру качественно улучшить уровень предоставляемых услуг!
+                  %h5.reviews-name Илья муромец
+                  %p.reviews-position управляющий БЦ “Сити-Люкс”
+                  .reviews-img
+                    %img(src="images/reviews-img.png" )
+                .reviews-card
+                  %p.reviews-description Консьерж помог нашему бизнес-центру качественно улучшить уровень предоставляемых услуг!
+                  %h5.reviews-name Добрыня Никитич
                   %p.reviews-position управляющий БЦ “Сити-Люкс”
                   .reviews-img
                     %img(src="images/reviews-img.png" )
               .col-xs-8.col-xs-offset-2.col-sm-6.col-sm-offset-3
                 .reviews-slider
                   .item
-                    .client-img
+                    .client-img.js-toggle-review-card(data-index="0")
                       %img(src="images/reviews-img.png" )
-
                   .item
-                    .client-img
+                    .client-img.js-toggle-review-card(data-index="1")
                       %img(src="images/reviews-img1.png" )
                   .item
-                    .client-img
+                    .client-img.js-toggle-review-card(data-index="2")
                       %img(src="images/reviews-img.png" )
                   .item
-                    .client-img
+                    .client-img.js-toggle-review-card(data-index="3")
                       %img(src="images/reviews-img1.png" )
 
       %section.clients
@@ -335,7 +351,7 @@
                 .row
                   .col-md-3
                     .form-group
-                      %input.form-control(type="email" placeholder="Email")
+                      %input.form-control(type="email" placeholder="Email" required="required")
                   .col-md-3
                     .form-group
                       %input.form-control(type="text" placeholder="Торговый центр “Ривьера”")
@@ -348,7 +364,7 @@
                         %option Базовый
                   .col-md-3
                     .form-group
-                      %input.form-control(type="text" placeholder="Ваш телефон (необязательно)")
+                      %input.form-control(type="text" placeholder="Ваш телефон" required="required")
                 .row
                   .col-md-12
                     .form-group
@@ -365,8 +381,8 @@
               .cotacts-wrapper
                 %h5 ООО "Консьерж"
                 %p.adress 188367, г. Москва,<br> ул. Новый Арбат 20, офис 100
-                %p.phone +7 (495) 731-74-37
-                %p.email info@concierge.app
+                %a.phone(href="#" ) +7 (495) 731-74-37
+                %a.email(href="#" ) info@concierge.app
                 %p.metro "Арбатская 3, 4", "Смоленская 3, 4"
                 .btn-wrapper
                   %a.btn-white(href="#" data-popup-link="map") Открыть карту
