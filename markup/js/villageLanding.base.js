@@ -1,6 +1,6 @@
 /* Main scripts file. */
 
-window.liveGroup = {
+window.villageLanding = {
 	Behavior: {},
 	Settings: {},
 	Functions: {},
@@ -22,23 +22,23 @@ jQuery.fn.extend({
 /**
  * Default (base) behavior
  */
-liveGroup.Behavior.default = function(context) {
+villageLanding.Behavior.default = function(context) {
 	jQuery('html').removeClass('no-js');
 }
 
 /**
  * Execute all Behaviors.
  */
-liveGroup.runBehaviors = function(context) {
+villageLanding.runBehaviors = function(context) {
 	if (typeof context == 'undefined') context = document;
-	var behaviors = Object.keys(liveGroup.Behavior);
+	var behaviors = Object.keys(villageLanding.Behavior);
 	for (var i = 0, len = behaviors.length; i < len; i++) {
-		liveGroup.Behavior[behaviors[i]](context);
+		villageLanding.Behavior[behaviors[i]](context);
 	}
 }
 /**
  * Run All behaviors on document ready.
  */
 jQuery(document).ready(function() {
-	liveGroup.runBehaviors(document);
+	villageLanding.runBehaviors(document);
 });

@@ -607,6 +607,12 @@ section {
       border-right: 1000px solid;
     }
   }
+  .slider-img {
+    background: url("../images/slider-item.png") no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    height: 700px;
+  }
 }
 
 @include  breakpoint ($tabletlgdown) {
@@ -617,6 +623,9 @@ section {
     }
     .slider-description {
       text-align: center;
+    }
+    .slider-img {
+      height: 825px;
     }
   }
 
@@ -1405,7 +1414,6 @@ section {
   }
 }
 
-
 /* Rates */
 
 /* Clients */
@@ -1633,10 +1641,10 @@ section {
     text-align: center;
     .cotacts-wrapper {
       float: none;
-      margin-top: 15px;
+      margin-top: 5px;
       background: rgba(246, 246, 248, 0.8);
       border-radius: 4px;
-      padding: 40px;
+      padding: 35px 40px;
       text-align: left;
       .btn-white {
         background: $maincolor;
