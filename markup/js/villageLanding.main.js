@@ -6,7 +6,7 @@
   /**
    * Chosen select
    */
-  liveGroup.Behavior.chosenSelect = function (context) {
+  villageLanding.Behavior.chosenSelect = function (context) {
     var $select = $('select', context);
     var $selectItem = $();
     if ($select.length) {
@@ -31,7 +31,7 @@
   /**
    * Mob menu
    */
-  liveGroup.Behavior.mobMenu = function (context) {
+  villageLanding.Behavior.mobMenu = function (context) {
     var $mobMenuLink = $('.mob-menu-icon', context),
       $navbarMenuOverlay = $('.navbar-menu-overlay', context),
       $mobSidebar = $('.mob-sidebar'),
@@ -54,7 +54,7 @@
   /**
    * Header slider
    */
-  liveGroup.Behavior.headerSlider = function (context) {
+  villageLanding.Behavior.headerSlider = function (context) {
     $(".owl-carousel").owlCarousel({
       nav: false,
       loop: true,
@@ -69,36 +69,25 @@
         }
       }
 
-      // "singleItem:true" is a shortcut for:
-      // items : 1,
-      // itemsDesktop : false,
-      // itemsDesktopSmall : false,
-      // itemsTablet: false,
-      // itemsMobile : false
-
     });
   }
   /**
    * Phone slider
    */
-  liveGroup.Behavior.carouselRotate = function (context) {
+  villageLanding.Behavior.carouselRotate = function (context) {
     $(".carousel-rotate").owlCarousel({
-      nav: true,
+      nav: false,
       loop: true,
       dots: false,
       autoplay: true,
       smartSpeed: 1000,
       items: 1,
       navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
-      // onResized: function () {
-      //   var $this = $(this),
-      //     $container = $this[0].$element,
-      //     $navBtns = $container.find('.owl-nav > div');
-      //   $navBtns.addClass('padding-l');
-      //   setTimeout(function () {
-      //     $navBtns.removeClass('padding-l');
-      //   }, 200);
-      // }
+      responsive: {
+        991: {
+          nav: true
+        }
+      }
 
     });
 
@@ -106,7 +95,7 @@
   /**
    * Reviews Slider
    */
-  liveGroup.Behavior.reviewsSlider = function (context) {
+  villageLanding.Behavior.reviewsSlider = function (context) {
     $(".reviews-slider").owlCarousel({
       nav: true,
       loop: true,
@@ -117,14 +106,13 @@
       responsive: {
         775: {
           items: 4,
-          nav: true
         }
       }
 
     });
 
   }
-  liveGroup.Behavior.toggleReviewCard = function (context) {
+  villageLanding.Behavior.toggleReviewCard = function (context) {
     var $btns = $('.client-img.js-toggle-review-card', context);
     if ($btns.length) {
       $btns.on('click', function (e) {
@@ -144,7 +132,7 @@
   /**
    * Earning slider
    */
-  liveGroup.Functions.checkSlider = function () {
+  villageLanding.Functions.checkSlider = function () {
     var width = $(window).width(),
       $slider = $(".earnings-slider");
     console.log($slider.data('owlCarousel') );
@@ -156,25 +144,30 @@
     else {
       if (typeof $slider.data('owlCarousel') == "undefined") {
         $slider.owlCarousel({
-          nav: true,
+          nav: false,
           loop: true,
           dots: true,
           items: 1,
           smartSpeed: 1000,
           onResize: function () {},
-          navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>']
+          navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+          responsive: {
+            991: {
+              nav: true
+            }
+          }
         });
       }
     }
   }
 
-   liveGroup.Behavior.earningsSlider = function (context) {
+   villageLanding.Behavior.earningsSlider = function (context) {
      if ($('.earnings-slider').length) {
-       liveGroup.Functions.checkSlider();
+       villageLanding.Functions.checkSlider();
        $(window).resize(function() {
          clearTimeout(resizeCatch);
          resizeCatch = setTimeout(function () {
-           liveGroup.Functions.checkSlider();
+           villageLanding.Functions.checkSlider();
          }, 300);
        });
 
@@ -185,9 +178,9 @@
   /**
    * rate slider
    */
-  liveGroup.Behavior.ratesSlider = function (context) {
+  villageLanding.Behavior.ratesSlider = function (context) {
     $(".rates-slider").owlCarousel({
-      nav: true,
+      nav: false,
       loop: true,
       dots: true,
       slideBy: 3,
@@ -196,25 +189,17 @@
       navText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
       responsive: {
         991: {
-          items: 3
+          items: 3,
+          nav: true
         }
       }
-      // onResized: function () {
-      //   var $this = $(this),
-      //     $container = $this[0].$element,
-      //     $navBtns = $container.find('.owl-nav > div');
-      //   $navBtns.addClass('padding-l');
-      //   setTimeout(function () {
-      //     $navBtns.removeClass('padding-l');
-      //   }, 200);
-      // }
     })
   }
 
   /**
    * imagefill
    */
-  liveGroup.Behavior.imageFill = function (context) {
+  villageLanding.Behavior.imageFill = function (context) {
     $('.img-wrapper').imagefill();
 
   }
@@ -222,7 +207,7 @@
   /**
    * matchHeight
    */
-  liveGroup.Behavior.matchHeight = function (context) {
+  villageLanding.Behavior.matchHeight = function (context) {
     var $el = $('.js-equal-height');
     if ($el.length) {
       $el.matchHeight();
@@ -232,7 +217,7 @@
   /**
    * Show info block
    */
-  liveGroup.Behavior.showInfoBlock = function (context) {
+  villageLanding.Behavior.showInfoBlock = function (context) {
     var $imgLink = $('.img-link', context),
       $vilageCardOpen = $('.vilage-card-open'),
       $vilageCardWrap = $('.vilage-card-wrap'),
@@ -258,7 +243,7 @@
   /**
    * Show advantages block
    */
-  liveGroup.Behavior.btnAdvantagesOpen = function (context) {
+  villageLanding.Behavior.btnAdvantagesOpen = function (context) {
     var $btnAdvantagesOpen = $('.btn-advantages-open', context),
       $advantagesOpen = $('.advantages-open'),
       $btnAdvantagesClose = $('.btn-advantages-close');
@@ -281,22 +266,27 @@
   /**
    * Popup open
    */
-  liveGroup.Behavior.openPopup = function (context) {
+  villageLanding.Behavior.openPopup = function (context) {
     var $linkPopup = $('[data-popup-link]', context);
     if ($linkPopup.length) {
       $linkPopup.on('click', function (e) {
         e.preventDefault();
-        liveGroup.Functions.closeAllPopups();
+        villageLanding.Functions.closeAllPopups();
         var attrPopup = $(this, context).attr('data-popup-link');
         if (attrPopup.length) {
-          liveGroup.Functions.openPopup(attrPopup);
+          villageLanding.Functions.openPopup(attrPopup);
+
+          if(attrPopup == 'map') {
+            villageLanding.Functions.initGMap();
+          }
         }
       });
 
     }
   }
-  liveGroup.Functions.openPopup = function (popup) {
-    liveGroup.Functions.closeAllPopups();
+
+  villageLanding.Functions.openPopup = function (popup) {
+    villageLanding.Functions.closeAllPopups();
     var $popup = $('[data-popup=' + popup + ']'),
       $body = $('body');
     if ($popup.length) {
@@ -310,7 +300,7 @@
     }
   }
 
-  liveGroup.Functions.closeAllPopups = function (context) {
+  villageLanding.Functions.closeAllPopups = function (context) {
     var $popups = $('.popup-overlay', context),
       $body = $('body', context);
     if ($popups.length) {
@@ -323,16 +313,16 @@
   /**
    * Popup close
    */
-  liveGroup.Behavior.hidePopup = function (context) {
+  villageLanding.Behavior.hidePopup = function (context) {
     var $link = $('.popup .icon-close', context);
     if ($link.length) {
       $link.on('click', function (e) {
         e.preventDefault();
-        liveGroup.Functions.closeAllPopups();
+        villageLanding.Functions.closeAllPopups();
       });
       $('.popup-overlay').on('click', function (event) {
         if ($(event.target).closest('.popup').length === 0) {
-          liveGroup.Functions.closeAllPopups();
+          villageLanding.Functions.closeAllPopups();
         }
       });
     }
@@ -341,8 +331,40 @@
   /**
    * Scroll 2 id
    */
-  liveGroup.Behavior.scroll2Id = function (context) {
+  villageLanding.Behavior.scroll2Id = function (context) {
     $("a[href*='#']").mPageScroll2id();
+  }
+
+  villageLanding.Functions.initGMap = function(){
+
+    // When the window has finished loading create our google map below
+      // Basic options for a simple Google Map
+      // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+      var mapOptions = {
+        // How zoomed in you want the map to start at (always required)
+        zoom: 11,
+
+        // The latitude and longitude to center the map (always required)
+        center: new google.maps.LatLng(55.75154, 37.5997293), // Moscow
+
+        // How you would like to style the map.
+        // This is where you would paste any style found on Snazzy Maps.
+        styles: [{"featureType":"administrative","elementType":"labels.text.fill","stylers":[{"color":"#444444"}]},{"featureType":"landscape","elementType":"all","stylers":[{"color":"#f2f2f2"}]},{"featureType":"poi","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":-100},{"lightness":45}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"visibility":"on"},{"color":"#b5a265"}]},{"featureType":"road.arterial","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"transit","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"all","stylers":[{"color":"#0f4d67"},{"visibility":"on"}]},{"featureType":"water","elementType":"labels.text","stylers":[{"color":"#ffffff"}]},{"featureType":"water","elementType":"labels.text.stroke","stylers":[{"color":"#256461"}]}]
+      };
+
+      // Get the HTML DOM element that will contain your map
+      // We are using a div with id="map" seen below in the <body>
+      var mapElement = document.getElementById('map');
+
+      // Create the Google Map using our element and options defined above
+      var map = new google.maps.Map(mapElement, mapOptions);
+
+      // Let's also add a marker while we're at it
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(55.75154, 37.5997293),
+        map: map,
+        title: 'Snazzy!'
+      });
   }
 
 
