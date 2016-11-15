@@ -625,10 +625,9 @@ section {
       text-align: center;
     }
     .slider-img {
-      height: 825px;
+      height: 900px;
     }
   }
-
 }
 
 @include  breakpoint ($mobilexs) {
@@ -688,10 +687,7 @@ section {
       width: 100%;
       background: $maincolor;
       transition: all 0.3s;
-      border-top: none;
-      border-right: none;
-      border-bottom: 3px solid $maincolor;
-      border-left: none;
+      border: none;
       color: $white;
       padding: 13px 0;
       text-transform: uppercase;
@@ -699,8 +695,7 @@ section {
       cursor: pointer;
       outline: none;
       &:hover {
-        border-bottom: 3px solid #a37835;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        background: #ae8d5b;
       }
     }
   }
@@ -919,15 +914,11 @@ section {
     text-transform: uppercase;
     padding: 10px 50px;
     background: $maincolor;
-    border-top: 3px solid transparent;
-    border-right: none;
-    border-bottom: 3px solid $maincolor;
     border-radius: 20px;
     transition: all 0.3s;
     outline: none;
     &:hover {
-      border-bottom: 3px solid #a37835;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      background: #ae8d5b;
     }
   }
   .btn-advantages-open,
@@ -995,7 +986,7 @@ section {
     transform: rotate(0.000001deg);
   }
   &:after {
-    right: 49%;
+    right: 50%;
     border-left: 1000px solid transparent;
     border-right: 1000px solid #f5f6f8;
   }
@@ -1214,7 +1205,7 @@ section {
     text-transform: uppercase;
     transition: all 1s;
     &:hover {
-      background-color: #a37835;
+      background-color: #ae8d5b;
     }
   }
 }
@@ -1471,14 +1462,10 @@ section {
   .btn-main {
     margin-top: 40px;
     transition: all 0.3s;
-    border-top: 3px solid transparent;
-    border-right: none;
-    border-bottom: 3px solid $maincolor;
-    border-left: none;
+    border: none;
     outline: none;
     &:hover {
-      border-bottom: 3px solid #7a5c2e;
-      box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      background: #ae8d5b;
     }
   }
 
@@ -1664,7 +1651,6 @@ section {
 }
 
 /* contacts */
-
 
 
 /* Popup styles */
@@ -1900,10 +1886,8 @@ input {
       width: 70px;
       height: 70px;
       margin: 0 auto;
-      border: 4px solid #c39e65;
+      border: 4px solid #c7c8ce;
       border-radius: 50%;
-      box-shadow: 0 1px 0 6px rgba(195, 158, 101, 0.2);
-
     }
   }
   .owl-carousel .owl-item {
@@ -2018,4 +2002,9 @@ input {
 }
 .active-user {
   margin-top: -15px;
+  img {
+    border: 4px solid #c39e65 !important;
+    box-shadow: 0 1px 0 6px rgba(195, 158, 101, 0.2);
+
+  }
 }
