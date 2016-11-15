@@ -135,7 +135,6 @@
   villageLanding.Functions.checkSlider = function () {
     var width = $(window).width(),
       $slider = $(".earnings-slider");
-    console.log($slider.data('owlCarousel') );
     if (width > 991) {
       if (typeof $slider.data('owlCarousel') !== "undefined") {
         $slider.data('owlCarousel').destroy();
@@ -259,6 +258,7 @@
         e.preventDefault();
         $advantagesOpen.toggle();
         $btnAdvantagesOpen.toggle(0);
+        $('html, body').animate({scrollTop: $('.earnings').offset().top }, 900);
       });
     }
   }
